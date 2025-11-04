@@ -1,6 +1,6 @@
 ## 📗 `playground-frontend/README.md`
 
-# 🎨 Playground Frontend
+# 🎨 Playground Frontend Pepper
 
 This is the **frontend** of the Playground project.  
 Built with **Angular 21** and **Angular Material**, including a simple light/dark theme toggle and multi-language support via **ngx-translate**.
