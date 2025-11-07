@@ -1,0 +1,13 @@
+﻿.spacer { flex: 1 1 auto; }
+.container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+mat-form-field { --mdc-outlined-text-field-container-shape: 20px; }
+
+.flag-icon {
+  width: 20px;
+  height: 14px;
+  object-fit: cover;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08) inset;
+  vertical-align: -2px;
+}
+mat-option .flag-icon { margin-right: 8px; }

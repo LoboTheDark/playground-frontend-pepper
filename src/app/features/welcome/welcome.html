@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ `WELCOME.TITLE` | translate }} </mat-card-title>
+    <mat-card-subtitle>{{ `WELCOME.SUB` | translate }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ `WELCOME.TEXT` | translate }}</p>
+    <p style="margin-top: 8px;">
+      {{ `WELCOME.COUNTER` | translate }}: <strong data-testid="counter">{{ count() }}</strong>
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary"
+            (click)="inc()"
+            data-testid="inc"
+    >
+      <mat-icon>add</mat-icon> {{ `WELCOME.INC` | translate }}
+    </button>
+    <button mat-stroked-button
+            (click)="reset()"
+            data-testid="reset"
+    >
+      <mat-icon>restart_alt</mat-icon>  {{ `WELCOME.RESET` | translate }}
+    </button>
+  </mat-card-actions>
+</mat-card>

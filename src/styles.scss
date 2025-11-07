@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// ---- Themes ----
+$light-theme: mat.define-theme((
+  color: ( theme-type: light, primary: mat.$cyan-palette, tertiary: mat.$orange-palette ),
+  typography: ( brand-family: 'Inter, Roboto, Arial, sans-serif', bold-weight: 600 ),
+  density: ( scale: 0 ),
+));
+
+$dark-theme: mat.define-theme((
+  color: ( theme-type: dark,  primary: mat.$cyan-palette, tertiary: mat.$orange-palette ),
+));
+
+// ---- Core + Components ----
+@include mat.core-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+
+
+// Dark-Mode
+.dark {
+  @include mat.all-component-colors($dark-theme);
+}
+
+/* ---- Custom variables ---- */
+:root {
+  --app-bg: #{mat.get-theme-color($light-theme, surface-container-low)};
+  --app-fg: #{mat.get-theme-color($light-theme, on-surface)};
+  --app-card-background: #fafafa;
+}
+.dark {
+  --app-bg: #{mat.get-theme-color($dark-theme, surface-container-low)};
+  --app-fg: #{mat.get-theme-color($dark-theme, on-surface)};
+  --app-card-background: #313131;
+}
+
+/* ---- global background and tests ---- */
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: Inter, Roboto, Arial, sans-serif;
+  background-color: var(--app-bg);
+  color: var(--app-fg);
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,   /* 0 oder 1 */
+    "wght" 400, /* 100..700 */
+    "GRAD" 0,   /* -50..200 */
+    "opsz" 24;  /* 20..48 */
+}
+
+/* smooth transition between theme change */
+.mat-toolbar,
+.mat-mdc-card,
+.mat-sidenav,
+.mat-mdc-menu-panel,
+.mat-mdc-dialog-container,
+.mat-mdc-select-panel,
+.mat-mdc-snack-bar-container,
+.cdk-overlay-pane {
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    fill 220ms ease;
+}

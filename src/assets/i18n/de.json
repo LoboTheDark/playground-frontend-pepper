@@ -1,0 +1,13 @@
+﻿{
+  "APP": { "TITLE": "Playground Pepper" },
+  "WELCOME": {
+    "TITLE": "Willkommen 👋",
+    "SUB": "Angular 20 + Material",
+    "TEXT": "Das ist eine einfache Start-Komponente als Basis.",
+    "COUNTER": "Zähler",
+    "INC": "Inkrementieren",
+    "RESET": "Reset"
+  },
+  "THEME": { "LIGHT": "Hell", "DARK": "Dunkel" },
+  "LANG": { "LABEL": "Sprache", "EN": "Englisch", "DE": "Deutsch" }
+}
